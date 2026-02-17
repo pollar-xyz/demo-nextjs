@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <PollarProvider
       config={{
-        baseUrl: 'https://sdk.local.pollar.xyz',
+        baseUrl: 'https://sdk.pollar.xyz',
         apiKey: 'cmlq7p1800002mwidnveszrsz',
       }}
     >
