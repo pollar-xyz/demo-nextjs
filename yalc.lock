@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "@pollar/auth-core": {
+      "signature": "64dab709bf05104c061b2520b640ef8e",
+      "file": true
+    }
+  }
+}
