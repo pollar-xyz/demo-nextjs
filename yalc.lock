@@ -6,14 +6,14 @@
       "file": true
     },
     "@pollar/core": {
-      "signature": "096dc0cdc639bd35ee71003655ca644d",
+      "signature": "a8668e2fb8593b42d67c8708efd01b24",
       "file": true,
-      "replaced": "^0.1.5"
+      "replaced": "^0.3.2"
     },
     "@pollar/react": {
-      "signature": "8c1c2738f0d7f9faf32d73191479e236",
+      "signature": "9004b4b9a553349ca18912daa786548d",
       "file": true,
-      "replaced": "^0.1.1"
+      "replaced": "^0.3.2"
     }
   }
 }
