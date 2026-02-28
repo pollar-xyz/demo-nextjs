@@ -7,11 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "dev:pull": "yalc add @pollar/react @pollar/core"
+    "dev:pull": "yalc add @pollar/react @pollar/core",
+    "pull": "pnpm remove @pollar/react @pollar/core; pnpm add @pollar/react @pollar/core "
   },
   "dependencies": {
-    "@pollar/core": "^0.3.4",
-    "@pollar/react": "^0.3.4",
+    "@pollar/core": "^0.4.1",
+    "@pollar/react": "^0.4.1",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3"

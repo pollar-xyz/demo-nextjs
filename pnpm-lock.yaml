@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@pollar/core':
-        specifier: ^0.3.4
-        version: 0.3.4
+        specifier: ^0.4.1
+        version: 0.4.1
       '@pollar/react':
-        specifier: ^0.3.4
-        version: 0.3.4(@pollar/core@0.3.4)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^0.4.1
+        version: 0.4.1(@pollar/core@0.4.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       next:
         specifier: 16.1.6
         version: 16.1.6(@babel/core@7.29.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -431,11 +431,11 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@pollar/core@0.3.4':
-    resolution: {integrity: sha512-ArCCrsHzJ/8jr+UV1rKNeKvEULaK4AwgoNxjIhameZ28X3duaXWj9MII5c6dHeZ6o5id7Lv/PR/P9cuRjQyorQ==}
+  '@pollar/core@0.4.1':
+    resolution: {integrity: sha512-Qx+qXU0relhbzwncdk4s8rldqwcgqjJE0xLkpTHaHN2yQX83u5408R0RU+Ag+VqQ9dpqwrs4k50GG3znvD/ffA==}
 
-  '@pollar/react@0.3.4':
-    resolution: {integrity: sha512-pz6JCeM1ixznrYun7vad6GwLic3KDt0emzaqjqXa5ry1fivg5EaM/aeX6EDPfrQ7KRF+UWrJVcr/A3upVBsYcw==}
+  '@pollar/react@0.4.1':
+    resolution: {integrity: sha512-kUkEGkioaPxLP+NN/E7kDJCRGIgBAVrmt9XkAHuQ0cqlKfgJPY8u7/ETgpup+B+F1GPqODC4ByBdqO687JfKIQ==}
     peerDependencies:
       '@pollar/core': '*'
       react: '>=18'
@@ -2324,14 +2324,14 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@pollar/core@0.3.4':
+  '@pollar/core@0.4.1':
     dependencies:
       '@stellar/freighter-api': 2.0.0
       openapi-fetch: 0.17.0
 
-  '@pollar/react@0.3.4(@pollar/core@0.3.4)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@pollar/react@0.4.1(@pollar/core@0.4.1)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@pollar/core': 0.3.4
+      '@pollar/core': 0.4.1
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
