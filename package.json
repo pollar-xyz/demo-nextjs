@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "dev:pull": "yalc add @pollar/react @pollar/core"
+    "dev:pull": "yalc add @pollar/react @pollar/core",
+    "pull": "pnpm remove @pollar/react @pollar/core; pnpm add @pollar/react @pollar/core "
   },
   "dependencies": {
     "@pollar/core": "^0.4.4",
