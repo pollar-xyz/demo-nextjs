@@ -22,7 +22,6 @@ export const PollarStateTable = () => {
         <tbody>
         {[
           { label: 'network', entry: state.network },
-          { label: 'authentication', entry: state.authentication },
           { label: 'transaction', entry: state.transaction },
         ].map(({ label, entry }) => (
           <tr key={label} className="border-t border-zinc-200 dark:border-zinc-700">

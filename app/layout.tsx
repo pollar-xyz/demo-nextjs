@@ -1,4 +1,3 @@
-import { PollarProviderWrapper } from '@/app/PollarProviderWrapper';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Suspense } from 'react';
@@ -30,9 +29,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
     <Suspense>
-      <PollarProviderWrapper>
-        {children}
-      </PollarProviderWrapper>
+      {children}
     </Suspense>
     </body>
     </html>
