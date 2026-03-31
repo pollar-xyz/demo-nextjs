@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@pollar/core':
-        specifier: file:.yalc/@pollar/core
-        version: file:.yalc/@pollar/core
+        specifier: ^0.5.0
+        version: 0.5.0
       '@pollar/react':
-        specifier: file:.yalc/@pollar/react
-        version: file:.yalc/@pollar/react(@pollar/core@file:.yalc/@pollar/core)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^0.5.0
+        version: 0.5.0(@pollar/core@0.5.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@stellar/stellar-sdk':
         specifier: ^15.0.0
         version: 15.0.0
@@ -445,11 +445,11 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@pollar/core@file:.yalc/@pollar/core':
-    resolution: {directory: .yalc/@pollar/core, type: directory}
+  '@pollar/core@0.5.0':
+    resolution: {integrity: sha512-GhTpK/STz8W0mAQUyn4CGA4cxT9I8tqdNHV+X1hCMX5MoZ7o5hu6+Rh4s4VZrJCe78AHWaJ1gpLVYBimMSvdcA==}
 
-  '@pollar/react@file:.yalc/@pollar/react':
-    resolution: {directory: .yalc/@pollar/react, type: directory}
+  '@pollar/react@0.5.0':
+    resolution: {integrity: sha512-+jGEMgtcPXP3zv++Gve1rXnpcGow/+bYGeW1qdjYzSpCjPKTeCS0GlEejM4YbJ6ag1dPkHcD+MKxyiKSuMw7zw==}
     peerDependencies:
       '@pollar/core': '*'
       react: '>=18'
@@ -2454,14 +2454,14 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@pollar/core@file:.yalc/@pollar/core':
+  '@pollar/core@0.5.0':
     dependencies:
       '@stellar/freighter-api': 2.0.0
       openapi-fetch: 0.17.0
 
-  '@pollar/react@file:.yalc/@pollar/react(@pollar/core@file:.yalc/@pollar/core)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@pollar/react@0.5.0(@pollar/core@0.5.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@pollar/core': file:.yalc/@pollar/core
+      '@pollar/core': 0.5.0
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
