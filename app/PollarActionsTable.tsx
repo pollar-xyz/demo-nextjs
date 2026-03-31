@@ -13,7 +13,6 @@ export const PollarActionsTable = () => {
     login,
     logout,
     submitTx,
-    sendTransaction,
   } = usePollar();
   const [ balance, setBalance ] = useState<number | null>(null);
   const [ toAddress, setToAddress ] = useState('');
@@ -72,37 +71,6 @@ export const PollarActionsTable = () => {
         <td className={cell}>—</td>
       </tr>
 
-      {/* — tx — */}
-      <tr className={sepBold}>
-        <td className={cell}>sendTransaction - payment</td>
-        <td className={cell}>
-          <div className="flex items-center gap-2">
-            <input
-              className={`w-48 ${input}`}
-              placeholder="wallet address"
-              value={toAddress}
-              onChange={e => setToAddress(e.target.value)}
-            />
-            <input
-              className={`w-20 ${input}`}
-              placeholder="amount"
-              type="number"
-              value={amount}
-              onChange={e => setAmount(e.target.value)}
-            />
-            <button
-              className={btn}
-              onClick={() => sendTransaction('payment', {
-                destination: toAddress,
-                amount,
-                asset: { type: 'native' },
-              })}
-            >run
-            </button>
-          </div>
-        </td>
-        <td className={cell}>—</td>
-      </tr>
       <tr className={sep}>
         <td className={cell}>buildTx - payment</td>
         <td className={cell}>

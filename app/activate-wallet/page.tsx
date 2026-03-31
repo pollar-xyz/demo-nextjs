@@ -21,11 +21,11 @@ const input =
   'w-full rounded border border-zinc-300 dark:border-zinc-600 bg-transparent px-3 py-2 text-sm outline-none focus:border-zinc-500 font-mono';
 
 export default function ActivateWalletPage() {
-  const [secretKey, setSecretKey] = useState('');
-  const [confirmed, setConfirmed] = useState(false);
-  const [publicKey, setPublicKey] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<ActivateResult | null>(null);
+  const [ secretKey, setSecretKey ] = useState('');
+  const [ confirmed, setConfirmed ] = useState(false);
+  const [ publicKey, setPublicKey ] = useState('');
+  const [ loading, setLoading ] = useState(false);
+  const [ result, setResult ] = useState<ActivateResult | null>(null);
 
   function handleConfirmKey() {
     const trimmed = secretKey.trim();
@@ -84,7 +84,8 @@ export default function ActivateWalletPage() {
           </div>
 
           <div className="rounded border border-amber-200 bg-amber-50 dark:border-amber-800/50 dark:bg-amber-950/30 px-3 py-2 text-xs text-amber-700 dark:text-amber-400 mb-4 leading-relaxed">
-            <strong>Demo only.</strong> In a real integration you should <strong>never</strong> handle secret keys on the
+            <strong>Demo only.</strong> In a real integration you should <strong>never</strong> handle secret keys on
+            the
             frontend. This call must be made exclusively from your backend server.
           </div>
 
@@ -105,7 +106,10 @@ export default function ActivateWalletPage() {
             {confirmed ? (
               <button
                 className="shrink-0 rounded border border-zinc-300 dark:border-zinc-600 px-3 py-1.5 text-xs text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors"
-                onClick={() => { setConfirmed(false); setResult(null); }}
+                onClick={() => {
+                  setConfirmed(false);
+                  setResult(null);
+                }}
               >
                 edit
               </button>
@@ -149,7 +153,10 @@ export default function ActivateWalletPage() {
               className={input}
               placeholder="GABC...XYZ"
               value={publicKey}
-              onChange={e => { setPublicKey(e.target.value); setResult(null); }}
+              onChange={e => {
+                setPublicKey(e.target.value);
+                setResult(null);
+              }}
               onKeyDown={e => e.key === 'Enter' && !loading && publicKey.trim() && handleActivate()}
             />
           </div>
@@ -198,9 +205,17 @@ export default function ActivateWalletPage() {
             endpoint reference
           </summary>
           <div className="mt-3 rounded border border-zinc-200 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 p-3 space-y-1 leading-relaxed">
-            <p><span className="text-zinc-500">POST</span> {clientEnv.NEXT_PUBLIC_SERVER_API_URL}/v1/wallets/activate</p>
-            <p><span className="text-zinc-500">header:</span> x-pollar-api-key: sec_testnet_xxxx</p>
-            <p><span className="text-zinc-500">body:</span> {'{ "publicKey": "G..." }'}</p>
+            <p>
+              <span className="text-zinc-500">POST</span>
+              {clientEnv.NEXT_PUBLIC_SERVER_API_URL}/v1/wallets/activate
+            </p>
+            <p>
+              <span className="text-zinc-500">header:</span>
+              x-pollar-api-key: sec_testnet_xxxx
+            </p>
+            <p>
+              <span className="text-zinc-500">body:</span>
+              {'{ "publicKey": "G..." }'}</p>
             <p className="pt-1 text-zinc-500">200 → {'{ publicKey, amount }'}</p>
             <p className="text-zinc-500">409 WALLET_ALREADY_FUNDED · 404 WALLET_NOT_FOUND · 403 FORBIDDEN</p>
           </div>
