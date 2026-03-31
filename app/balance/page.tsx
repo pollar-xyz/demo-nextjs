@@ -6,7 +6,14 @@ import { useState } from 'react';
 const inp = 'w-full rounded border border-zinc-200 dark:border-zinc-700 bg-transparent px-3 py-2 text-sm font-mono outline-none focus:border-zinc-400 placeholder:text-zinc-400';
 const btn = 'rounded bg-zinc-900 dark:bg-zinc-50 px-4 py-2 text-xs font-medium text-white dark:text-zinc-900 hover:bg-zinc-700 dark:hover:bg-zinc-200 disabled:opacity-40 transition-colors';
 
-type Balance = { asset: string; balance: string; assetIssuer?: string };
+type Balance = {
+  type: 'native' | 'credit_alphanum4' | 'credit_alphanum12';
+  code: string;
+  issuer?: string;
+  balance: string;
+  available: string;
+  limit?: string;
+};
 
 export default function BalancePage() {
   const { getBalance, walletAddress, isAuthenticated } = usePollar();
@@ -21,10 +28,8 @@ export default function BalancePage() {
     setBalances(null);
     try {
       const result = await getBalance(key || undefined);
-      if (result.success) {
-        setBalances(result.balances);
-      } else {
-        setError(result.errorCode);
+      if (result) {
+        setBalances(result.balances as Balance[]);
       }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Unknown error');
@@ -81,18 +86,20 @@ export default function BalancePage() {
                 <tr className="border-b border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60">
                   <th className="text-left px-4 py-2 text-zinc-400 font-medium">Asset</th>
                   <th className="text-right px-4 py-2 text-zinc-400 font-medium">Balance</th>
+                  <th className="text-right px-4 py-2 text-zinc-400 font-medium">Available</th>
                 </tr>
               </thead>
               <tbody>
                 {balances.map((b, i) => (
                   <tr key={i} className="border-b border-zinc-100 dark:border-zinc-800 last:border-0">
                     <td className="px-4 py-2.5 text-zinc-700 dark:text-zinc-300">
-                      {b.asset}
-                      {b.assetIssuer && (
-                        <span className="block text-[10px] text-zinc-400 truncate max-w-[160px]">{b.assetIssuer}</span>
+                      {b.type === 'native' ? 'XLM' : b.code}
+                      {b.issuer && (
+                        <span className="block text-[10px] text-zinc-400 truncate max-w-40">{b.issuer}</span>
                       )}
                     </td>
                     <td className="px-4 py-2.5 text-right text-zinc-700 dark:text-zinc-300">{b.balance}</td>
+                    <td className="px-4 py-2.5 text-right text-zinc-400">{b.available}</td>
                   </tr>
                 ))}
               </tbody>
